@@ -17,7 +17,7 @@ class IdCard extends React.Component {
             <b>Gender:</b> {gender}
           </p>
           <p>
-            <b>Height:</b> {height}
+            <b>Height:</b> {height}cm
           </p>
           <p>
             <b>Birth:</b> {birth.toUTCString()}

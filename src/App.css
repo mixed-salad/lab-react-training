@@ -67,3 +67,33 @@
   font-size: 1.5em;
   margin-left: 1em;
 }
+
+/* Random */
+.single-random {
+  border: 2px black solid;
+  width: 80%;
+  margin: 0 auto 1em auto;
+}
+
+.single-random h3 {
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-left: 1em;
+}
+
+/* Box color */
+.single-box-color {
+  padding: 1em 3em;
+  margin: 0 auto 1em auto;
+  width: 80%;
+  border: 2px black solid;
+}
+
+.single-box-color h3 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-left: 1em;
+}
