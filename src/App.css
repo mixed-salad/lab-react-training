@@ -97,3 +97,47 @@
   font-size: 1.5em;
   margin-left: 1em;
 }
+
+/* Credit Card */
+.credit-card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-credit-card {
+  margin-right: 1em;
+  width: 30%;
+  height: 13em;
+  max-width: 20em;
+  border-radius: 25px;
+  position: relative;
+}
+
+.credit-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.credit-card-type-image {
+  height: 20px;
+  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.credit-card-number {
+  font-size: 1.5em;
+  padding-top: 2em;
+}
+
+.credit-card-dates-name {
+  text-align: left;
+  margin-left: 2em;
+}
+
+.credit-card-dates-name p {
+  margin: 0;
+  padding-bottom: 0;
+}
