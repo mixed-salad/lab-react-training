@@ -143,3 +143,22 @@
   margin: 0;
   padding-bottom: 0;
 }
+
+/* Driver card */
+
+.single-driver-card {
+  display: flex;
+  background-color: rgb(0, 74, 160);
+  border-radius: 15px;
+  color: white;
+  margin: 0 auto 1em auto;
+  width: 30%;
+}
+
+.driver-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 1em;
+}
