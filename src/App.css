@@ -162,3 +162,10 @@
   object-fit: cover;
   padding: 1em;
 }
+
+/* Dice */
+
+.dice img {
+  height: 5em;
+  width: 5em;
+}

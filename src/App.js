@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import IdCard from './components/IdCard';
 import Greetings from './components/Greetings';
@@ -10,6 +9,7 @@ import Rating from './components/Rating';
 import DriverCard from './components/DriverCard';
 import LikeButton from './components/LikeButton';
 import ClickablePicture from './components/ClickablePicture';
+import Dice from './components/Dice';
 
 function App() {
   return (
@@ -101,6 +101,9 @@ function App() {
         img="/img/persons/maxence.png"
         imgClicked="/img/persons/maxence-glasses.png"
       />
+      <div>
+        <Dice />
+      </div>
     </div>
   );
 }
