@@ -169,3 +169,25 @@
   height: 5em;
   width: 5em;
 }
+
+/* Numbers Table */
+.numbers-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 35em;
+  margin: 0 auto;
+}
+
+.single-number {
+  width: 100px;
+  height: 100px;
+  border: black solid 1px;
+  text-align: center;
+}
+
+.single-number.red {
+  background-color: red;
+  color: white;
+}

@@ -26,6 +26,8 @@ class CreditCard extends React.Component {
       case 'Master Card':
         typeImagePath = `https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg`;
         break;
+      default:
+        typeImagePath = `https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg`;
     }
 
     // Separating the numbers
