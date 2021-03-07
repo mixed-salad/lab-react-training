@@ -83,7 +83,9 @@ class SignupPage extends React.Component {
             (this.state.nationality === 'de' && 'Hallo')}
         </p>
         <p>Your email address is: {this.state.email}</p>
-        {/* <p>Your email address is {this.state.email}</p> */}
+        <p>
+          Your email address is {(this.state.valid && 'correct') || 'incorrect'}
+        </p>
       </div>
     );
   }
