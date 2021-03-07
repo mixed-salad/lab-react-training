@@ -191,3 +191,14 @@
   background-color: red;
   color: white;
 }
+
+/* Facebook */
+
+.single-country-button {
+  margin-right: 1em;
+  border-radius: 10px;
+}
+
+.highlighted {
+  background-color: lightskyblue;
+}

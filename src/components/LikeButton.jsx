@@ -27,7 +27,7 @@ class LikeButton extends React.Component {
           onClick={this.incrementCount}
           style={buttonStyle}
         >
-          {this.state.count} Likes
+          {this.state.count} Like{this.state.count !== 1 && 's'}
         </button>
       </div>
     );

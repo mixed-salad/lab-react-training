@@ -6,41 +6,74 @@ class Facebook extends React.Component {
     super();
     this.state = {
       profiles: profiles,
-      selectedCountry: '',
+      selectedCountry: null,
     };
   }
 
-  setCountry = (input) => {
-    this.setState({ selectedCountry: input });
+  handleCountrySelect = (country) => {
+    this.setState({
+      selectedCountry: country,
+    });
   };
+  // setColor() {
+  //   this.setState({ selectedCountry: true });
+  //   console.log('country:' + this.state.selectedCountry);
+  // }
 
   render() {
-    let countryButtons = ['All'];
+    // let countryButtons = [];
 
-    for (let profile of this.state.profiles) {
-      if (!countryButtons.find((country) => country === profile.country)) {
-        countryButtons.push(profile.country);
-      }
-    }
+    // for (let profile of this.state.profiles) {
+    //   if (!countryButtons.find((country) => country === profile.country)) {
+    //     countryButtons.push(profile.country);
+    //   }
+    // }
+
+    const countries = this.state.profiles.reduce(
+      (uniqueCountries, { country }) => {
+        return uniqueCountries.includes(country)
+          ? uniqueCountries
+          : [...uniqueCountries, country];
+      },
+      []
+    );
 
     return (
       <div>
+        <span>{this.state.selectedCountry}</span>
         <div className="country-buttons">
-          {countryButtons.map((country) => {
+          <button
+            onClick={() => this.handleCountrySelect(null)}
+            className={!this.state.selectedCountry && 'highlighted'}
+          >
+            All
+          </button>
+          {countries.map((country) => {
             return (
               <button
-                onClick={this.setCountry}
-                className="single-country-button"
+                key={country}
+                onClick={() => this.handleCountrySelect(country)}
+                className={
+                  this.state.selectedCountry === country && 'highlighted'
+                }
               >
                 {country}
               </button>
             );
           })}
         </div>
-        <ul>
+        <div>
           {this.state.profiles.map((profile) => {
             return (
-              <div className="single-id-card">
+              <div
+                key={profile.img}
+                className={
+                  !this.state.selectedCountry ||
+                  this.state.selectedCountry === profile.country
+                    ? 'highlighted'
+                    : ''
+                }
+              >
                 <img
                   className="id-picture"
                   src={profile.img}
@@ -63,7 +96,7 @@ class Facebook extends React.Component {
               </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     );
   }
