@@ -7,6 +7,7 @@ class SignupPage extends React.Component {
       email: null,
       password: null,
       nationality: null,
+      valid: null,
     };
   }
 
@@ -15,6 +16,21 @@ class SignupPage extends React.Component {
     this.setState({
       nationality: value,
     });
+  };
+
+  checkEmail = (event) => {
+    const value = event.target.value;
+    const regEx = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (value.match(regEx)) {
+      this.setState({
+        valid: true,
+      });
+    } else {
+      this.setState({
+        valid: false,
+      });
+    }
+    console.log(this.state.valid);
   };
 
   handleSubmittion = (event) => {
@@ -36,7 +52,16 @@ class SignupPage extends React.Component {
       <div>
         <form onSubmit={this.handleSubmittion}>
           <label htmlFor="input-email">Email</label>
-          <input type="email" id="input-email" placeholder="Email" />
+          <input
+            onChange={this.checkEmail}
+            type="email"
+            id="input-email"
+            placeholder="Email"
+            className={(this.state.valid && 'valid') || 'invalid'}
+          />
+          <p className={(!this.state.valid && 'error') || 'non-error'}>
+            Please enter valid email.
+          </p>
           <label htmlFor="input-password">Password</label>
           <input type="password" id="input-password" placeholder="Password" />
           <label htmlFor="input-nationality">Nationality</label>

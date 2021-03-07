@@ -202,3 +202,31 @@
 .highlighted {
   background-color: lightskyblue;
 }
+
+/* Form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input:focus {
+  border: none;
+}
+
+form .valid {
+  border: green 3px solid;
+}
+
+form .invalid {
+  border-color: red;
+}
+
+form .error {
+  display: block;
+}
+
+form .non-error {
+  display: none;
+}
