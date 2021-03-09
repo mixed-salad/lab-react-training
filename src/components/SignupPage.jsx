@@ -33,8 +33,10 @@ class SignupPage extends React.Component {
     console.log(this.state.valid);
   };
 
-  handleSubmittion = (event) => {
+  handleSubmission = (event) => {
     event.preventDefault();
+    // const name = event.target.name;
+    // const value = event.target.value;
     console.log(event);
     const email = event.target[0].value;
     const password = event.target[1].value;
@@ -44,26 +46,39 @@ class SignupPage extends React.Component {
       email: email,
       password: password,
       nationality: nationality,
+      // [name]: value,
     });
   };
 
   render() {
+    // const passwordIsValid = this.state.password.length > 7;
+    // const emailIsValid = new RegExp(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/).test(
+    //   this.state.email
+    // );
     return (
       <div>
-        <form onSubmit={this.handleSubmittion}>
+        <form onSubmit={this.handleSubmission}>
           <label htmlFor="input-email">Email</label>
           <input
             onChange={this.checkEmail}
             type="email"
             id="input-email"
             placeholder="Email"
+            name="email"
+            value={this.state.email}
             className={(this.state.valid && 'valid') || 'invalid'}
           />
           <p className={(!this.state.valid && 'error') || 'non-error'}>
             Please enter valid email.
           </p>
           <label htmlFor="input-password">Password</label>
-          <input type="password" id="input-password" placeholder="Password" />
+          <input
+            type="password"
+            name="password"
+            id="input-password"
+            placeholder="Password"
+            value={this.state.password}
+          />
           <label htmlFor="input-nationality">Nationality</label>
           <select
             onChange={this.handleNationality}
